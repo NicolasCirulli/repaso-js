@@ -19,7 +19,6 @@ $form.addEventListener( 'submit', ( e ) => {
     render( notes, $sectionNotes,createArticleNote)
 } )
 
-
 $sectionNotes.addEventListener( 'click', e => {
     const dataset =e.target.dataset 
     if( dataset.changestate ){
@@ -40,5 +39,4 @@ $sectionNotes.addEventListener( 'click', e => {
 $filter.addEventListener( "input", e => {
     const filtered = notes.filter( note => note.title.toLowerCase().includes( $search.value.toLowerCase() ) && ( !$filterPending.checked || $filterPending.checked != note.state ) ) 
     render( filtered, $sectionNotes,createArticleNote)
-    
 } )

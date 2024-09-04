@@ -8,6 +8,7 @@ export function createNote( {title, description, state=false, id} ){
 }
 
 export function render( list, container, fn ){
+    console.log( list ) 
     const fragment = document.createDocumentFragment()
     for (const item of list) {
         fragment.appendChild( fn( item ) )
