@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tailwind</title>
+</head>
+
+<body>
+    <div class="bg-zinc-900 text-white w-full min-h-screen flex flex-col">
+        <header class="text-center p-5">
+            <h1>Notas</h1>
+        </header>
+        <main class="grow text-center p-5 flex flex-col items-center">
+            <form class="flex flex-col items-center justify-center bg-zinc-800 p-5 rounded min-w-[350px] text-xl font-bold">
+                <div class="flex flex-col items-start">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="rounded" autocomplete="off">
+                </div>
+                <div class="flex flex-col items-start">
+                    <label for="Description">Description</label>
+                    <input type="text" id="Description" name="Description" class="rounded" autocomplete="off">
+                </div>
+                <input type="submit" value="Add" class="cursor-pointer rounded-lg bg-white text-zinc-800 mt-5 px-2 py-1 self-center">
+            </form>
+
+            <search class="flex gap-2 mt-4">
+                <input class="rounded ps-2 text-zinc-800 outline-none" type="text" name="search" id="search" autocomplete="off" placeholder="Title...">
+                <input class="hidden peer" type="checkbox" name="" id="filter-pending">
+                <label for="filter-pending" class="select-none peer-checked:bg-emerald-700 peer-checked:text-white cursor-pointer px-5 py-2 bg-white text-emerald-700 rounded font-semibold "> Pending</label>
+            </search>   
+            <section class="w-full p-5 flex justify-center flex-wrap gap-5">
+                <article class="flex flex-col bg-zinc-800 gap-2 border rounded w-2/4 min-w-[320px] w-max-[500px]  p-5 relative">
+                    <h3 class="text-2xl">Title</h3>
+                    <p class="text-lg">Description of note......</p>
+                    <button class="bg-white p-1 rounded absolute top-2 right-2">❌</button>
+                    <label class="cursor-pointer bg-white px-4 py-1 text-xl rounded self-center text-red-700" for="status"> Pending</label>
+                    <input type="checkbox" class="hidden" name="note-status" id="status">
+                </article>
+                <article class="flex flex-col bg-zinc-800 gap-2 border rounded w-2/4 min-w-[320px] w-max-[500px]  p-5 relative">
+                    <h3 class="text-2xl line-through">Title</h3>
+                    <p class="text-lg line-through">Description of note......</p>
+                    <button class="bg-white p-1 rounded absolute top-2 right-2">❌</button>
+                    <label class="cursor-pointer bg-white px-4 py-1 text-xl rounded self-center text-emerald-700 font-bold" for="status"> Completed </label>
+                    <input type="checkbox" class="hidden" name="note-status" id="status">
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p class="text-center p-5">Nicolás Cirulli</p>
+        </footer>
+    </div>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
